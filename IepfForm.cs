@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Schema;
 
-namespace SimulCAConsProj
+namespace IepfCAConsProj
 {
-    public partial class SimulCAConsForm : Form
+    public partial class IEPFCAConsForm : Form
     {
-        public SimulCAConsForm()
+        public IEPFCAConsForm()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace SimulCAConsProj
         {
             SqlConnection con = new SqlConnection("Data Source=VCCIPL-TECH\\VENTURESQLEXP;Initial Catalog=VCCIPL;Integrated Security=True;");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from SimulCAHeaderRecord", con);
+            SqlCommand cmd = new SqlCommand("select * from IepfNSDLHeaderRecord", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -49,7 +49,7 @@ namespace SimulCAConsProj
         {
             SqlConnection con = new SqlConnection("Data Source=VCCIPL-TECH\\VENTURESQLEXP;Initial Catalog=VCCIPL;Integrated Security=True;");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from SimulCADetailRecord", con);
+            SqlCommand cmd = new SqlCommand("select * from IepfNSDLDetailRecord", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -60,7 +60,7 @@ namespace SimulCAConsProj
         {
             SqlConnection con = new SqlConnection("Data Source=VCCIPL-TECH\\VENTURESQLEXP;Initial Catalog=VCCIPL;Integrated Security=True;");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from SimulCADetailDistRecord", con);
+            SqlCommand cmd = new SqlCommand("select * from IepfNSDLDetailDistRecord", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -71,47 +71,35 @@ namespace SimulCAConsProj
         {
             SqlConnection con = new SqlConnection("Data Source=VCCIPL-TECH\\VENTURESQLEXP;Initial Catalog=VCCIPL;Integrated Security=True;");
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into SimulCAHeaderRecord (Record_Identification, File_Identification, " +
-                "RTA_Internal_Reference_No, Credit_ISIN, Debit_ISIN, CA_Type, Allotment_Date,Allotment_Allocation_Description," +
-                "Execution_Date, Total_Credit_Quantity_Free_Lockin, Total_Debit_Quantity_Free_Lockin, Total_Credit_Quantity_Lockin," +
-                "Total_Debit_Quantity_Lockin, Total_number_detail_records, Total_Issued_Amount_Allotment_Allocation_Credit_ISIN," +
-                "Total_Paidup_Amount_Allotment_Allocation_Credit_ISIN, Stamp_Duty_Payable,Basis_calculation_Stamp_Duty,MasterUniqNo) " +
-                "values (@rec_id, @file_idn, @Rta_irno, @Credit_ISIN, @Debit_ISIN, @Ca_type, @Allot_Date," +
-                " @Allotment_Allocation_Description, @Exec_Date, @Total_Credit_Quantity_Free_Lockin, " +
-                "@Total_Debit_Quantity_Free_Lockin,@Total_Credit_Quantity_Lockin, @Total_Debit_Quantity_Free_Lockin, " +
-                "@Total_number_detail_records, @Total_Issued_Amount_Allotment_Allocation_Credit_ISIN, " +
-                "@Total_Paidup_Amount_Allotment_Allocation_Credit_ISIN, @Stamp_Duty_Payable, @Basis_calculation_Stamp_Duty,@MasterUniqNo)", con);
+            SqlCommand cmd = new SqlCommand("insert into IepfNSDLHeaderRecord (Record_Identification,File_Identification,RTA_IntRefNo,Credit_ISIN,Debit_ISIN,CA_Type,BApproval_Dt,CA_Description,Execution_Date,TotCrQty_FLinBl,TotDrQty_FLinBl,TotCrQty_Lin,TotDrQty_Lin,Tot_detrec,CIN_BCIN_No,FY_WAmtRel,MasterUniqNo) " +
+                "values (@Record_Identification, @File_Identification, @RTA_IntRefNo, @Credit_ISIN, @Debit_ISIN, @CA_Type, " +
+                "@BApproval_Dt, @CA_Description, @Execution_Date, @TotCrQty_FLinBl, @TotDrQty_FLinBl, @TotCrQty_Lin, " +
+                "@TotDrQty_Lin, @Tot_detrec, @CIN_BCIN_No, @FY_WAmtRel,@MasterUniqNo)", con);
 
-            cmd.Parameters.AddWithValue("@rec_id", txtRecidentification.Text);
-            cmd.Parameters.AddWithValue("@file_idn", txtFileidentification.Text);
-            cmd.Parameters.AddWithValue("@Rta_irno", textBox1.Text);
+            cmd.Parameters.AddWithValue("@Record_Identification", txtRecidentification.Text);
+            cmd.Parameters.AddWithValue("@File_Identification", txtFileidentification.Text);
+            cmd.Parameters.AddWithValue("@RTA_IntRefNo", txtIntrefno.Text);
             cmd.Parameters.AddWithValue("@Credit_ISIN", txtCreditisin.Text);
             cmd.Parameters.AddWithValue("@Debit_ISIN", txtDebitisin.Text);
             var caty = comboBox1.Text.Substring(0, 4);
-            cmd.Parameters.AddWithValue("@Ca_type", caty);
-            cmd.Parameters.AddWithValue("@Allot_Date", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@CA_Type", caty);
+            cmd.Parameters.AddWithValue("@BApproval_Dt", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
             var alldesc = comboBox1aadesc.Text.Substring(0, 4);
-            cmd.Parameters.AddWithValue("@Allotment_Allocation_Description", alldesc);
-            cmd.Parameters.AddWithValue("@Exec_Date", dateTimePicker2.Value.ToString("yyyy-MM-dd"));
-            cmd.Parameters.AddWithValue("@Total_Credit_Quantity_Free_Lockin", txtTotalcrqtyfli.Text);
-            cmd.Parameters.AddWithValue("@Total_Debit_Quantity_Free_Lockin", txtTotaldrqtyfli.Text);
-            cmd.Parameters.AddWithValue("@Total_Credit_Quantity_Lockin", txtTotalcrqtyli.Text);
-            cmd.Parameters.AddWithValue("@Total_Debit_Quantity_Lockin", txtTotaldrqtylin.Text);
-            cmd.Parameters.AddWithValue("@Total_number_detail_records", txtTotalnoofrec.Text);
-
+            cmd.Parameters.AddWithValue("@CA_Description", alldesc);
+            cmd.Parameters.AddWithValue("@Execution_Date", dateTimePicker2.Value.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@TotCrQty_FLinBl", txtTotalcrqtyfli.Text);
+            cmd.Parameters.AddWithValue("@TotDrQty_FLinBl", txtTotaldrqtyfli.Text);
+            cmd.Parameters.AddWithValue("@TotCrQty_Lin", txtTotalcrqtyli.Text);
+            cmd.Parameters.AddWithValue("@TotDrQty_Lin", txtTotaldrqtylin.Text);
+            cmd.Parameters.AddWithValue("@Tot_detrec", txtTotalnoofrec.Text);
             //+REPLICATE('0', 16 - LEN(convert(bigint, allotment_quantity) * convert(bigint, Issue_Price))) + CONVERT(VARCHAR, convert(bigint, allotment_quantity) * convert(bigint, Issue_Price)) + '00'
-            
-            cmd.Parameters.AddWithValue("@Total_Issued_Amount_Allotment_Allocation_Credit_ISIN", txtTotalissamtaacrisin.Text);
-            cmd.Parameters.AddWithValue("@Total_Paidup_Amount_Allotment_Allocation_Credit_ISIN", txtTotalpaidamtaacrisin.Text);
-            var stmp = comboBox2stampdutypayable.Text.Substring(0, 1);
-            cmd.Parameters.AddWithValue("@Stamp_Duty_Payable", stmp);
-            var bstmp = comboBox3basiscalcstampduty.Text.Substring(0, 2);
-            cmd.Parameters.AddWithValue("@Basis_calculation_Stamp_Duty", bstmp);
-            cmd.Parameters.AddWithValue("@MasterUniqNo", txtMun01.Text);
+            cmd.Parameters.AddWithValue("@CIN_BCIN_No", txtCinBcinNo.Text);
+            cmd.Parameters.AddWithValue("@FY_WAmtRel", txtFyAmtRel.Text);
+            cmd.Parameters.AddWithValue("@MasterUniqNo", txtIepfmun01.Text);
 
             cmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Data has saved in SimulCAHeaderRecord database");
+            MessageBox.Show("Data has saved in IepfNSDLHeaderRecord database");
 
         }
 
@@ -119,49 +107,40 @@ namespace SimulCAConsProj
         {
             SqlConnection con = new SqlConnection("Data Source=VCCIPL-TECH\\VENTURESQLEXP;Initial Catalog=VCCIPL;Integrated Security=True;");
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into SimulCADetailRecord (Record_IDentification,Detail_Record_Line_No,Credit_DP_ID,Credit_Client_ID,Credit_Client_Account_Category,Debit_DP_ID,Debit_Client_ID,Debit_Client_Account_Category,Credit_Quantity,Debit_Quantity,Credit_Quantity_Lockin_Reason_Code,Credit_Quantity_Lockin_Release_Date,Debit_Quantity_Lockin_Reason_Code,Debit_Quantity_Lockin_Release_Date,Issue_Price_Allotment_Allocation_Credit_ISIN,Issued_Amount_Allotment_Allocation_Credit_ISIN,Paidup_Price_Allotment_Allocation_Credit_ISIN,Paidup_Amount_Allotment_Allocation_Credit_ISIN,MasterUniqNo\r\n) " +
-                "values(@Record_IDentification,@Detail_Record_Line_No,@Credit_DP_ID,@Credit_Client_ID,@Credit_Client_Account_Category,@Debit_DP_ID,@Debit_Client_ID,@Debit_Client_Account_Category,@Credit_Quantity,@Debit_Quantity,@Credit_Quantity_Lockin_Reason_Code,@Credit_Quantity_Lockin_Release_Date,@Debit_Quantity_Lockin_Reason_Code,@Debit_Quantity_Lockin_Release_Date,@Issue_Price_Allotment_Allocation_Credit_ISIN,@Issued_Amount_Allotment_Allocation_Credit_ISIN,@Paidup_Price_Allotment_Allocation_Credit_ISIN,@Paidup_Amount_Allotment_Allocation_Credit_ISIN,@MasterUniqNo)", con);
-
+            SqlCommand cmd = new SqlCommand("insert into IepfNSDLDetailRecord (" +
+                "Record_IDentification,Detail_Record_Line_No,Credit_DP_ID,Credit_Client_ID,CrClient_AccCat,Debit_DP_ID," +
+                "Debit_Client_ID,DrClient_AccCat,Cr_Qty,Dr_Qty,CrQty_LinReasonCd,CrQty_Lin_RelDt,DrQty_LinReasonCd," +
+                "DrQty_Lin_RelDt,MasterUniqNo) " +
+                "values(@Record_IDentification,@Detail_Record_Line_No,@Credit_DP_ID,@Credit_Client_ID,@CrClient_AccCat," +
+                "@Debit_DP_ID,@Debit_Client_ID,@DrClient_AccCat,@Cr_Qty,@Dr_Qty,@CrQty_LinReasonCd,@CrQty_Lin_RelDt," +
+                "@DrQty_LinReasonCd,@DrQty_Lin_RelDt,@MasterUniqNo)", con);
             cmd.Parameters.AddWithValue("@Record_IDentification", txtRecordIdentification.Text);
             cmd.Parameters.AddWithValue("@Detail_Record_Line_No", txtDetailrecno.Text);
-
             cmd.Parameters.AddWithValue("@Credit_DP_ID", txtCrDpid.Text);
             cmd.Parameters.AddWithValue("@Credit_Client_ID", txtCrclid.Text);
             var crclaccat = comboBox2.Text.Substring(0, 2);
-            cmd.Parameters.AddWithValue("@Credit_Client_Account_Category", crclaccat);
+            cmd.Parameters.AddWithValue("@CrClient_AccCat", crclaccat);
             cmd.Parameters.AddWithValue("@Debit_DP_ID", txtDrdpid.Text);
             cmd.Parameters.AddWithValue("@Debit_Client_ID", txtDrclid.Text);
             var drclaccat = comboBox6.Text.Substring(0, 2);
-            cmd.Parameters.AddWithValue("@Debit_Client_Account_Category", drclaccat);
+            cmd.Parameters.AddWithValue("@DrClient_AccCat", drclaccat);
             //var crqty = txtCrquantity.Text;
-            cmd.Parameters.AddWithValue("@Credit_Quantity", txtCrqty.Text);
+            cmd.Parameters.AddWithValue("@Cr_Qty", txtCrqty.Text);
             //var drqty = txtDrquantity.Text;
-            cmd.Parameters.AddWithValue("@Debit_Quantity", txtDrqty.Text);
+            cmd.Parameters.AddWithValue("@Dr_Qty", txtDrqty.Text);
             var crlinrc = comboBox5.Text.Substring(0, 2);
-            cmd.Parameters.AddWithValue("@Credit_Quantity_Lockin_Reason_Code", crlinrc);
-            cmd.Parameters.AddWithValue("@Credit_Quantity_Lockin_Release_Date", dateTimePicker4.Value.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@CrQty_LinReasonCd", crlinrc);
+            cmd.Parameters.AddWithValue("@CrQty_Lin_RelDt", dateTimePicker4.Value.ToString("yyyy-MM-dd"));
             // cmd.Parameters.AddWithValue("@Credit_Quantity_Lockin_Release_Date", txtCrqtylinreleasedate.Text);
             var drlinrc = comboBox4.Text.Substring(0, 2);
-            cmd.Parameters.AddWithValue("@Debit_Quantity_Lockin_Reason_Code", drlinrc);
-            cmd.Parameters.AddWithValue("@Debit_Quantity_Lockin_Release_Date", dateTimePicker3.Value.ToString("yyyy-MM-dd"));
-         
-
-
-            var issuepricecr = txtIaaacrisin.Text;
-            var issueamountcr = txtIaaacrisin.Text;
-            cmd.Parameters.AddWithValue("@Issue_Price_Allotment_Allocation_Credit_ISIN", txtIpaacrisin.Text);
-            var totcrqty_IssueAmtCalc = 
-                (Convert.ToInt32(txtCrqty.Text) * Convert.ToInt32(txtIpaacrisin.Text));
-            cmd.Parameters.AddWithValue("@Issued_Amount_Allotment_Allocation_Credit_ISIN", totcrqty_IssueAmtCalc);
-            var totalpaidupprice = Convert.ToString(Convert.ToInt32(txtCrqty.Text) * Convert.ToInt32(txtIpaacrisin.Text));
-            var totalpaidupamount = Convert.ToString(Convert.ToInt32(txtDrqty.Text) * Convert.ToInt32(txtIaaacrisin.Text));
-            cmd.Parameters.AddWithValue("@Paidup_Price_Allotment_Allocation_Credit_ISIN", txtPpaacrisin.Text);
-            cmd.Parameters.AddWithValue("@Paidup_Amount_Allotment_Allocation_Credit_ISIN", txtPaaacrisin.Text);
+            cmd.Parameters.AddWithValue("@DrQty_LinReasonCd", drlinrc);
+            cmd.Parameters.AddWithValue("@DrQty_Lin_RelDt", dateTimePicker3.Value.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@MasterUniqNo", txtMun02.Text);
          
             cmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Data has saved in SimulCADetailRecord database");
+            MessageBox.Show("Data has saved in IepfNSDLDetailRecord database");
+            
         }
 
         //e.Handled = !Char.IsDigit(e.KeyChar);
@@ -170,25 +149,28 @@ namespace SimulCAConsProj
             SqlConnection con = new SqlConnection("Data Source=VCCIPL-TECH\\VENTURESQLEXP;Initial Catalog=VCCIPL;Integrated Security=True;");
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("insert into SimulCADetailDistRecord (Record_IDentification,Detail_Record_Line_No,Debit_Credit_ISIN,Debit_Credit_Indicator,From_Distinctive_No_NSDL,To_Distinctive_No_NSDL,Quantity,Flag_status_DN_Range,CA_Code,MasterUniqNo) " +
-                "values(@Record_IDentification,@Detail_Record_Line_No,@Debit_Credit_ISIN,@Debit_Credit_Indicator,@From_Distinctive_No_NSDL,@To_Distinctive_No_NSDL,@Quantity,@Flag_status_DN_Range,@CA_Code,@MasterUniqNo)", con);
+            SqlCommand cmd = new SqlCommand("insert into IepfNSDLDetailDistRecord " +
+                "(Record_IDentification,Detail_Record_Line_No,ISIN,DRCRINDICATOR,From_DistNo_NSDL,To_DistNo_NSDL,Quantity,Flag_status_DN_Range,CA_Type,MasterUniqNo) " +
+                "values(@Record_IDentification,@Detail_Record_Line_No,@ISIN," +
+                "@DRCRINDICATOR,@From_DistNo_NSDL,@To_DistNo_NSDL,@Quantity,@Flag_status_DN_Range," +
+                "@CA_Type,@MasterUniqNo)", con);
             cmd.Parameters.AddWithValue("@Record_IDentification", txtRecident03.Text);
             cmd.Parameters.AddWithValue("@Detail_Record_Line_No", txtDetailrecordno.Text);
-            cmd.Parameters.AddWithValue("@Debit_Credit_ISIN", txtDrcrisin.Text);
+            cmd.Parameters.AddWithValue("@ISIN", txtISIN.Text);
             var drcrind3 = comboBox2drcrindicator.Text.Substring(0, 1);
-            cmd.Parameters.AddWithValue("@Debit_Credit_Indicator", drcrind3);
-            cmd.Parameters.AddWithValue("@From_Distinctive_No_NSDL", txtFromdistinctivenonsdl.Text);
-            cmd.Parameters.AddWithValue("@To_Distinctive_No_NSDL", txtTodistinctivenonsdl.Text);
+            cmd.Parameters.AddWithValue("@DRCRINDICATOR", drcrind3);
+            cmd.Parameters.AddWithValue("@From_DistNo_NSDL", txtFromdistinctivenonsdl.Text);
+            cmd.Parameters.AddWithValue("@To_DistNo_NSDL", txtTodistinctivenonsdl.Text);
             cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
             var flagdnr = comboBox1flagdnrange.Text.Substring(0, 2);
             cmd.Parameters.AddWithValue("@Flag_status_DN_Range", flagdnr);
             var cacode3 = comboBox3.Text.Substring(0, 4);
-            cmd.Parameters.AddWithValue("@CA_Code", cacode3);
+            cmd.Parameters.AddWithValue("@CA_Type", cacode3);
             cmd.Parameters.AddWithValue("@MasterUniqNo", txtMun03.Text);
 
             cmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Data has saved in database");
+            MessageBox.Show("Data has saved in IepfNSDLDetailDistRecord database");
         }
 
         private void txtMun01_KeyPress(object sender, KeyPressEventArgs e)

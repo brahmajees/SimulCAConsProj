@@ -1,6 +1,6 @@
-﻿namespace SimulCAConsProj
+﻿namespace IepfCAConsProj
 {
-    partial class SimulCAConsForm
+    partial class IEPFCAConsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,21 +44,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtCreditisin = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIntrefno = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFileidentification = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtRecordIdentification = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMun01 = new System.Windows.Forms.TextBox();
+            this.txtIepfmun01 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox3basiscalcstampduty = new System.Windows.Forms.ComboBox();
-            this.comboBox2stampdutypayable = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtTotalpaidamtaacrisin = new System.Windows.Forms.TextBox();
+            this.txtFyAmtRel = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtTotalissamtaacrisin = new System.Windows.Forms.TextBox();
+            this.txtCinBcinNo = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtTotalnoofrec = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -83,12 +79,6 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.txtIaaacrisin = new System.Windows.Forms.TextBox();
-            this.txtIpaacrisin = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -99,7 +89,7 @@
             this.comboBox2drcrindicator = new System.Windows.Forms.ComboBox();
             this.txtTodistinctivenonsdl = new System.Windows.Forms.TextBox();
             this.txtFromdistinctivenonsdl = new System.Windows.Forms.TextBox();
-            this.txtDrcrisin = new System.Windows.Forms.TextBox();
+            this.txtISIN = new System.Windows.Forms.TextBox();
             this.txtDetailrecordno = new System.Windows.Forms.TextBox();
             this.txtRecident03 = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
@@ -126,8 +116,6 @@
             this.txtDrqty = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPpaacrisin = new System.Windows.Forms.TextBox();
-            this.txtPaaacrisin = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -307,7 +295,7 @@
             // 
             this.txtRecidentification.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecidentification.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecidentification.Location = new System.Drawing.Point(219, 22);
+            this.txtRecidentification.Location = new System.Drawing.Point(221, 27);
             this.txtRecidentification.Name = "txtRecidentification";
             this.txtRecidentification.ReadOnly = true;
             this.txtRecidentification.Size = new System.Drawing.Size(23, 22);
@@ -369,9 +357,9 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(9, 182);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 15);
+            this.label9.Size = new System.Drawing.Size(126, 15);
             this.label9.TabIndex = 39;
-            this.label9.Text = "Allocation/Allotment Desc";
+            this.label9.Text = "Corporate Action Desc";
             // 
             // label8
             // 
@@ -379,9 +367,9 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(9, 157);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 15);
+            this.label8.Size = new System.Drawing.Size(116, 15);
             this.label8.TabIndex = 38;
-            this.label8.Text = "Allotment Date";
+            this.label8.Text = "Board Approval Date";
             // 
             // label7
             // 
@@ -435,17 +423,17 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "Credit ISIN";
             // 
-            // textBox1
+            // txtIntrefno
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(221, 50);
-            this.textBox1.MaxLength = 16;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(126, 23);
-            this.textBox1.TabIndex = 1;
+            this.txtIntrefno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIntrefno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIntrefno.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIntrefno.Location = new System.Drawing.Point(221, 50);
+            this.txtIntrefno.MaxLength = 16;
+            this.txtIntrefno.Name = "txtIntrefno";
+            this.txtIntrefno.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtIntrefno.Size = new System.Drawing.Size(126, 23);
+            this.txtIntrefno.TabIndex = 1;
             // 
             // label4
             // 
@@ -486,7 +474,7 @@
             // 
             this.txtRecordIdentification.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecordIdentification.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecordIdentification.Location = new System.Drawing.Point(289, 24);
+            this.txtRecordIdentification.Location = new System.Drawing.Point(290, 28);
             this.txtRecordIdentification.MaxLength = 2;
             this.txtRecordIdentification.Name = "txtRecordIdentification";
             this.txtRecordIdentification.ReadOnly = true;
@@ -507,90 +495,41 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Record IDentification";
             // 
-            // txtMun01
+            // txtIepfmun01
             // 
-            this.txtMun01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMun01.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMun01.Location = new System.Drawing.Point(220, 464);
-            this.txtMun01.MaxLength = 4;
-            this.txtMun01.Name = "txtMun01";
-            this.txtMun01.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMun01.Size = new System.Drawing.Size(78, 23);
-            this.txtMun01.TabIndex = 17;
-            this.txtMun01.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMun01.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMun01_KeyPress);
+            this.txtIepfmun01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIepfmun01.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIepfmun01.Location = new System.Drawing.Point(220, 413);
+            this.txtIepfmun01.MaxLength = 4;
+            this.txtIepfmun01.Name = "txtIepfmun01";
+            this.txtIepfmun01.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtIepfmun01.Size = new System.Drawing.Size(78, 23);
+            this.txtIepfmun01.TabIndex = 17;
+            this.txtIepfmun01.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtIepfmun01.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMun01_KeyPress);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(9, 468);
+            this.label21.Location = new System.Drawing.Point(9, 417);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(90, 15);
             this.label21.TabIndex = 43;
             this.label21.Text = "Master Uniq No";
             // 
-            // comboBox3basiscalcstampduty
+            // txtFyAmtRel
             // 
-            this.comboBox3basiscalcstampduty.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3basiscalcstampduty.FormattingEnabled = true;
-            this.comboBox3basiscalcstampduty.Items.AddRange(new object[] {
-            "00-Not applicable",
-            "01-Issued Amt to be considered as consideration for Stamp Duty",
-            "02-Paid-up Amt to be considered as consideration for Stamp Duty"});
-            this.comboBox3basiscalcstampduty.Location = new System.Drawing.Point(220, 440);
-            this.comboBox3basiscalcstampduty.MaxLength = 2;
-            this.comboBox3basiscalcstampduty.Name = "comboBox3basiscalcstampduty";
-            this.comboBox3basiscalcstampduty.Size = new System.Drawing.Size(248, 21);
-            this.comboBox3basiscalcstampduty.TabIndex = 16;
-            // 
-            // comboBox2stampdutypayable
-            // 
-            this.comboBox2stampdutypayable.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2stampdutypayable.FormattingEnabled = true;
-            this.comboBox2stampdutypayable.Items.AddRange(new object[] {
-            "N-Stamp Duty Not Payable",
-            "Y-Stamp Duty Payable"});
-            this.comboBox2stampdutypayable.Location = new System.Drawing.Point(220, 415);
-            this.comboBox2stampdutypayable.MaxLength = 1;
-            this.comboBox2stampdutypayable.Name = "comboBox2stampdutypayable";
-            this.comboBox2stampdutypayable.Size = new System.Drawing.Size(248, 21);
-            this.comboBox2stampdutypayable.TabIndex = 15;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(9, 441);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(194, 21);
-            this.label17.TabIndex = 58;
-            this.label17.Text = "Basis for calculation of Stamp Duty";
-            this.label17.UseCompatibleTextRendering = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(9, 414);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(114, 21);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Stamp Duty Payable";
-            this.label16.UseCompatibleTextRendering = true;
-            // 
-            // txtTotalpaidamtaacrisin
-            // 
-            this.txtTotalpaidamtaacrisin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalpaidamtaacrisin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalpaidamtaacrisin.Location = new System.Drawing.Point(220, 388);
-            this.txtTotalpaidamtaacrisin.MaxLength = 18;
-            this.txtTotalpaidamtaacrisin.Name = "txtTotalpaidamtaacrisin";
-            this.txtTotalpaidamtaacrisin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTotalpaidamtaacrisin.Size = new System.Drawing.Size(127, 23);
-            this.txtTotalpaidamtaacrisin.TabIndex = 14;
-            this.txtTotalpaidamtaacrisin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTotalpaidamtaacrisin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalpaidamtaacrisin_KeyPress);
+            this.txtFyAmtRel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFyAmtRel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFyAmtRel.Location = new System.Drawing.Point(220, 388);
+            this.txtFyAmtRel.MaxLength = 18;
+            this.txtFyAmtRel.Name = "txtFyAmtRel";
+            this.txtFyAmtRel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtFyAmtRel.Size = new System.Drawing.Size(127, 23);
+            this.txtFyAmtRel.TabIndex = 14;
+            this.txtFyAmtRel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFyAmtRel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalpaidamtaacrisin_KeyPress);
             // 
             // label15
             // 
@@ -598,23 +537,23 @@
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(9, 387);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(205, 21);
+            this.label15.Size = new System.Drawing.Size(139, 21);
             this.label15.TabIndex = 56;
-            this.label15.Text = "Tot Paidup Amt Allot/Alloc in Cr ISIN";
+            this.label15.Text = "Fin-Year Amount Relates";
             this.label15.UseCompatibleTextRendering = true;
             // 
-            // txtTotalissamtaacrisin
+            // txtCinBcinNo
             // 
-            this.txtTotalissamtaacrisin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalissamtaacrisin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalissamtaacrisin.Location = new System.Drawing.Point(220, 362);
-            this.txtTotalissamtaacrisin.MaxLength = 18;
-            this.txtTotalissamtaacrisin.Name = "txtTotalissamtaacrisin";
-            this.txtTotalissamtaacrisin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTotalissamtaacrisin.Size = new System.Drawing.Size(127, 23);
-            this.txtTotalissamtaacrisin.TabIndex = 13;
-            this.txtTotalissamtaacrisin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTotalissamtaacrisin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalissamtaacrisin_KeyPress);
+            this.txtCinBcinNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCinBcinNo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCinBcinNo.Location = new System.Drawing.Point(220, 362);
+            this.txtCinBcinNo.MaxLength = 18;
+            this.txtCinBcinNo.Name = "txtCinBcinNo";
+            this.txtCinBcinNo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCinBcinNo.Size = new System.Drawing.Size(127, 23);
+            this.txtCinBcinNo.TabIndex = 13;
+            this.txtCinBcinNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCinBcinNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalissamtaacrisin_KeyPress);
             // 
             // label14
             // 
@@ -622,9 +561,9 @@
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(9, 360);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(179, 21);
+            this.label14.Size = new System.Drawing.Size(75, 21);
             this.label14.TabIndex = 55;
-            this.label14.Text = "Total Iss Amt All/Alloc in Cr ISIN";
+            this.label14.Text = "CIN BCIN No";
             this.label14.UseCompatibleTextRendering = true;
             // 
             // txtTotalnoofrec
@@ -816,7 +755,6 @@
             this.txtCrDpid.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtCrDpid.Size = new System.Drawing.Size(127, 23);
             this.txtCrDpid.TabIndex = 21;
-            this.txtCrDpid.TabStop = false;
             // 
             // label26
             // 
@@ -900,87 +838,23 @@
             // 
             this.dateTimePicker3.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker3.Location = new System.Drawing.Point(290, 362);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(116, 25);
             this.dateTimePicker3.TabIndex = 32;
+            this.dateTimePicker3.Value = new System.DateTime(2023, 11, 10, 0, 0, 0, 0);
             // 
             // dateTimePicker4
             // 
             this.dateTimePicker4.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker4.Location = new System.Drawing.Point(290, 310);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(116, 25);
             this.dateTimePicker4.TabIndex = 30;
-            // 
-            // txtIaaacrisin
-            // 
-            this.txtIaaacrisin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIaaacrisin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIaaacrisin.Location = new System.Drawing.Point(290, 417);
-            this.txtIaaacrisin.MaxLength = 18;
-            this.txtIaaacrisin.Name = "txtIaaacrisin";
-            this.txtIaaacrisin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtIaaacrisin.Size = new System.Drawing.Size(100, 23);
-            this.txtIaaacrisin.TabIndex = 34;
-            this.txtIaaacrisin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtIaaacrisin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIaaacrisin_KeyPress);
-            // 
-            // txtIpaacrisin
-            // 
-            this.txtIpaacrisin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIpaacrisin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIpaacrisin.Location = new System.Drawing.Point(290, 390);
-            this.txtIpaacrisin.MaxLength = 18;
-            this.txtIpaacrisin.Name = "txtIpaacrisin";
-            this.txtIpaacrisin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtIpaacrisin.Size = new System.Drawing.Size(100, 23);
-            this.txtIpaacrisin.TabIndex = 33;
-            this.txtIpaacrisin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtIpaacrisin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIpaacrisin_KeyPress);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(14, 477);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(265, 15);
-            this.label30.TabIndex = 75;
-            this.label30.Text = "Paidup Amount Allotment/Allocation Credit ISIN";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(14, 450);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(247, 15);
-            this.label31.TabIndex = 76;
-            this.label31.Text = "Paidup Price Allotment/Allocation Credit ISIN";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(14, 423);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(261, 15);
-            this.label32.TabIndex = 77;
-            this.label32.Text = "Issued Amount Allotment/Allocation Credit ISIN";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(14, 396);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(239, 15);
-            this.label33.TabIndex = 78;
-            this.label33.Text = "Issue Price Allotment /Allocation Credit ISIN";
+            this.dateTimePicker4.Value = new System.DateTime(2023, 11, 10, 0, 0, 0, 0);
             // 
             // label34
             // 
@@ -1039,7 +913,7 @@
             this.btnView02.Location = new System.Drawing.Point(465, 534);
             this.btnView02.Name = "btnView02";
             this.btnView02.Size = new System.Drawing.Size(92, 25);
-            this.btnView02.TabIndex = 39;
+            this.btnView02.TabIndex = 35;
             this.btnView02.Text = "View";
             this.btnView02.UseVisualStyleBackColor = true;
             this.btnView02.Click += new System.EventHandler(this.btnSearch_Click);
@@ -1050,7 +924,7 @@
             this.btnSave02.Location = new System.Drawing.Point(367, 534);
             this.btnSave02.Name = "btnSave02";
             this.btnSave02.Size = new System.Drawing.Size(92, 25);
-            this.btnSave02.TabIndex = 38;
+            this.btnSave02.TabIndex = 34;
             this.btnSave02.Text = "Save";
             this.btnSave02.UseVisualStyleBackColor = true;
             this.btnSave02.Click += new System.EventHandler(this.btnSave02_Click);
@@ -1096,17 +970,17 @@
             this.txtFromdistinctivenonsdl.TabIndex = 43;
             this.txtFromdistinctivenonsdl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtDrcrisin
+            // txtISIN
             // 
-            this.txtDrcrisin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDrcrisin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDrcrisin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrcrisin.Location = new System.Drawing.Point(179, 83);
-            this.txtDrcrisin.MaxLength = 12;
-            this.txtDrcrisin.Name = "txtDrcrisin";
-            this.txtDrcrisin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtDrcrisin.Size = new System.Drawing.Size(100, 25);
-            this.txtDrcrisin.TabIndex = 41;
+            this.txtISIN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtISIN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtISIN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtISIN.Location = new System.Drawing.Point(179, 83);
+            this.txtISIN.MaxLength = 12;
+            this.txtISIN.Name = "txtISIN";
+            this.txtISIN.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtISIN.Size = new System.Drawing.Size(100, 25);
+            this.txtISIN.TabIndex = 41;
             // 
             // txtDetailrecordno
             // 
@@ -1124,7 +998,7 @@
             // 
             this.txtRecident03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecident03.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecident03.Location = new System.Drawing.Point(179, 29);
+            this.txtRecident03.Location = new System.Drawing.Point(179, 33);
             this.txtRecident03.Name = "txtRecident03";
             this.txtRecident03.ReadOnly = true;
             this.txtRecident03.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1170,9 +1044,9 @@
             this.label41.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(22, 88);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(105, 15);
+            this.label41.Size = new System.Drawing.Size(28, 15);
             this.label41.TabIndex = 100;
-            this.label41.Text = "Debit  / Credit ISIN";
+            this.label41.Text = "ISIN";
             // 
             // label42
             // 
@@ -1272,7 +1146,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtFileidentification);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIntrefno);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtCreditisin);
             this.groupBox1.Controls.Add(this.label5);
@@ -1296,22 +1170,18 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtTotalnoofrec);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.txtTotalissamtaacrisin);
+            this.groupBox1.Controls.Add(this.txtCinBcinNo);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.txtTotalpaidamtaacrisin);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.comboBox2stampdutypayable);
-            this.groupBox1.Controls.Add(this.comboBox3basiscalcstampduty);
+            this.groupBox1.Controls.Add(this.txtFyAmtRel);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.txtMun01);
+            this.groupBox1.Controls.Add(this.txtIepfmun01);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(482, 565);
             this.groupBox1.TabIndex = 113;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Simul CA Header [ 01 ]";
+            this.groupBox1.Text = "IEPF CA Header [ 01 ]";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label47
@@ -1359,8 +1229,6 @@
             this.groupBox2.Controls.Add(this.btnSave02);
             this.groupBox2.Controls.Add(this.label49);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtPpaacrisin);
-            this.groupBox2.Controls.Add(this.txtPaaacrisin);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label27);
             this.groupBox2.Controls.Add(this.label26);
@@ -1379,12 +1247,6 @@
             this.groupBox2.Controls.Add(this.label36);
             this.groupBox2.Controls.Add(this.label35);
             this.groupBox2.Controls.Add(this.label34);
-            this.groupBox2.Controls.Add(this.label33);
-            this.groupBox2.Controls.Add(this.label32);
-            this.groupBox2.Controls.Add(this.label31);
-            this.groupBox2.Controls.Add(this.label30);
-            this.groupBox2.Controls.Add(this.txtIpaacrisin);
-            this.groupBox2.Controls.Add(this.txtIaaacrisin);
             this.groupBox2.Controls.Add(this.comboBox4);
             this.groupBox2.Controls.Add(this.dateTimePicker4);
             this.groupBox2.Controls.Add(this.comboBox5);
@@ -1395,18 +1257,18 @@
             this.groupBox2.Size = new System.Drawing.Size(574, 565);
             this.groupBox2.TabIndex = 114;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Simul CA Detail [ 02 ]";
+            this.groupBox2.Text = "IEPF CA Detail [ 02 ]";
             // 
             // txtMun02
             // 
             this.txtMun02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMun02.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMun02.Location = new System.Drawing.Point(290, 496);
+            this.txtMun02.Location = new System.Drawing.Point(290, 389);
             this.txtMun02.MaxLength = 4;
             this.txtMun02.Name = "txtMun02";
             this.txtMun02.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtMun02.Size = new System.Drawing.Size(66, 23);
-            this.txtMun02.TabIndex = 37;
+            this.txtMun02.TabIndex = 33;
             this.txtMun02.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMun02.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMun02_KeyPress);
             // 
@@ -1414,7 +1276,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(14, 507);
+            this.label50.Location = new System.Drawing.Point(14, 397);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(90, 15);
             this.label50.TabIndex = 121;
@@ -1495,32 +1357,6 @@
             this.label1.TabIndex = 120;
             this.label1.Text = "Detail_Record_Line_No";
             // 
-            // txtPpaacrisin
-            // 
-            this.txtPpaacrisin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPpaacrisin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPpaacrisin.Location = new System.Drawing.Point(290, 443);
-            this.txtPpaacrisin.MaxLength = 18;
-            this.txtPpaacrisin.Name = "txtPpaacrisin";
-            this.txtPpaacrisin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPpaacrisin.Size = new System.Drawing.Size(100, 23);
-            this.txtPpaacrisin.TabIndex = 35;
-            this.txtPpaacrisin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPpaacrisin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPpaacrisin_KeyPress);
-            // 
-            // txtPaaacrisin
-            // 
-            this.txtPaaacrisin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPaaacrisin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaaacrisin.Location = new System.Drawing.Point(290, 470);
-            this.txtPaaacrisin.MaxLength = 18;
-            this.txtPaaacrisin.Name = "txtPaaacrisin";
-            this.txtPaaacrisin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPaaacrisin.Size = new System.Drawing.Size(100, 23);
-            this.txtPaaacrisin.TabIndex = 36;
-            this.txtPaaacrisin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPaaacrisin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaaacrisin_KeyPress);
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1552,7 +1388,7 @@
             this.groupBox3.Controls.Add(this.label44);
             this.groupBox3.Controls.Add(this.txtDetailrecordno);
             this.groupBox3.Controls.Add(this.label45);
-            this.groupBox3.Controls.Add(this.txtDrcrisin);
+            this.groupBox3.Controls.Add(this.txtISIN);
             this.groupBox3.Controls.Add(this.txtFromdistinctivenonsdl);
             this.groupBox3.Controls.Add(this.comboBox2drcrindicator);
             this.groupBox3.Controls.Add(this.txtTodistinctivenonsdl);
@@ -1562,7 +1398,7 @@
             this.groupBox3.Size = new System.Drawing.Size(468, 565);
             this.groupBox3.TabIndex = 115;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Simul CA Detail Distinctive [ 03 ]";
+            this.groupBox3.Text = "IEPF CA Detail Distinctive [ 03 ]";
             // 
             // comboBox3
             // 
@@ -1649,12 +1485,12 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(360, 9);
+            this.label51.Location = new System.Drawing.Point(383, 9);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(832, 25);
+            this.label51.Size = new System.Drawing.Size(749, 25);
             this.label51.TabIndex = 118;
-            this.label51.Text = "Venture Capital and Corporate Investments Private Limited - Simultaneous Corporat" +
-    "e Action";
+            this.label51.Text = "Venture Capital and Corporate Investments Private Limited - IEPF Corporate Action" +
+    "";
             // 
             // dataGridView2
             // 
@@ -1696,7 +1532,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(482, 144);
             this.dataGridView1.TabIndex = 121;
             // 
-            // SimulCAConsForm
+            // IEPFCAConsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1710,9 +1546,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.label28);
-            this.Name = "SimulCAConsForm";
+            this.Name = "IEPFCAConsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "IEPF Corporate Action";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1746,21 +1582,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCreditisin;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIntrefno;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFileidentification;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRecordIdentification;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMun01;
+        private System.Windows.Forms.TextBox txtIepfmun01;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox3basiscalcstampduty;
-        private System.Windows.Forms.ComboBox comboBox2stampdutypayable;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtTotalpaidamtaacrisin;
+        private System.Windows.Forms.TextBox txtFyAmtRel;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtTotalissamtaacrisin;
+        private System.Windows.Forms.TextBox txtCinBcinNo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtTotalnoofrec;
         private System.Windows.Forms.Label label13;
@@ -1785,12 +1617,6 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.TextBox txtIaaacrisin;
-        private System.Windows.Forms.TextBox txtIpaacrisin;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
@@ -1801,7 +1627,7 @@
         private System.Windows.Forms.ComboBox comboBox2drcrindicator;
         private System.Windows.Forms.TextBox txtTodistinctivenonsdl;
         private System.Windows.Forms.TextBox txtFromdistinctivenonsdl;
-        private System.Windows.Forms.TextBox txtDrcrisin;
+        private System.Windows.Forms.TextBox txtISIN;
         private System.Windows.Forms.TextBox txtDetailrecordno;
         private System.Windows.Forms.TextBox txtRecident03;
         private System.Windows.Forms.Label label38;
@@ -1825,8 +1651,6 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox txtPpaacrisin;
-        private System.Windows.Forms.TextBox txtPaaacrisin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCrqty;
         private System.Windows.Forms.TextBox txtDrqty;
