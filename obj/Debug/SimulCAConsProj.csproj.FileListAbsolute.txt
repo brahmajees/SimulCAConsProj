@@ -1,0 +1,10 @@
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\bin\Debug\SimulCAConsProj.exe.config
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\bin\Debug\SimulCAConsProj.exe
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\bin\Debug\SimulCAConsProj.pdb
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\obj\Debug\SimulCAConsProj.csproj.AssemblyReference.cache
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\obj\Debug\SimulCAConsProj.SimulCAConsForm.resources
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\obj\Debug\SimulCAConsProj.Properties.Resources.resources
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\obj\Debug\SimulCAConsProj.csproj.GenerateResource.cache
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\obj\Debug\SimulCAConsProj.csproj.CoreCompileInputs.cache
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\obj\Debug\SimulCAConsProj.exe
+D:\vccipl_projects\Deployment_Projects\SimulCAConsProj\obj\Debug\SimulCAConsProj.pdb
